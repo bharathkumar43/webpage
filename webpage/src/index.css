@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens - Updated to match light gray theme */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(210 40% 96%));
+    --glow-primary: 0 0 30px hsl(217 91% 60% / 0.3);
+    --glow-card: 0 0 20px hsl(217 91% 60% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Light gray theme color palette */
+    --blue-primary: 217 91% 60%;
+    --blue-light: 217 91% 70%;
+    --blue-dark: 217 91% 50%;
+    --gray-dark: 220 15% 25%;
+    --gray-medium: 220 15% 45%;
+    --gray-light: 220 13% 91%;
+    --white: 0 0% 100%;
+    --light-gray-bg: 0 0% 98%;
+
+    --sidebar-background: 0 0% 100%;
+
+    --sidebar-foreground: 220 15% 25%;
+
+    --sidebar-primary: 220 15% 25%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 210 40% 96%;
+
+    --sidebar-accent-foreground: 220 15% 25%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 15% 15%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 220 15% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Ensure minimum width for better responsive behavior */
+  html, body {
+    min-width: 320px;
+    overflow-x: auto;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* 3D Floating Animations */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
+  }
+  
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-float-medium {
+    animation: float-medium 4s ease-in-out infinite;
+  }
+  
+  .animate-float-fast {
+    animation: float-fast 3s ease-in-out infinite;
+  }
+  
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotateX-60 {
+    transform: rotateX(60deg);
+  }
+
+  /* Responsive layout utilities */
+  .responsive-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16;
+  }
+
+  .responsive-text {
+    @apply text-center lg:text-left;
+  }
+
+  .responsive-flex {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  /* Ensure content doesn't overflow on small screens */
+  .content-safe {
+    @apply max-w-full overflow-hidden;
+  }
+
+  /* Better mobile spacing */
+  .mobile-safe {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
