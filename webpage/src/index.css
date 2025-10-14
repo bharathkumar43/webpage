@@ -1,0 +1,343 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens - Updated to match light gray theme */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%), hsl(210 40% 96%));
+    --glow-primary: 0 0 30px hsl(217 91% 60% / 0.3);
+    --glow-card: 0 0 20px hsl(217 91% 60% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Light gray theme color palette */
+    --blue-primary: 217 91% 60%;
+    --blue-light: 217 91% 70%;
+    --blue-dark: 217 91% 50%;
+    --gray-dark: 220 15% 25%;
+    --gray-medium: 220 15% 45%;
+    --gray-light: 220 13% 91%;
+    --white: 0 0% 100%;
+    --light-gray-bg: 0 0% 98%;
+
+    --sidebar-background: 0 0% 100%;
+
+    --sidebar-foreground: 220 15% 25%;
+
+    --sidebar-primary: 220 15% 25%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 210 40% 96%;
+
+    --sidebar-accent-foreground: 220 15% 25%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 15% 15%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 220 15% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Ensure minimum width for better responsive behavior */
+  html, body {
+    min-width: 320px;
+    overflow-x: auto;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* 3D Floating Animations */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
+  }
+  
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-float-medium {
+    animation: float-medium 4s ease-in-out infinite;
+  }
+  
+  .animate-float-fast {
+    animation: float-fast 3s ease-in-out infinite;
+  }
+  
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotateX-60 {
+    transform: rotateX(60deg);
+  }
+
+  /* Responsive layout utilities */
+  .responsive-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16;
+  }
+
+  .responsive-text {
+    @apply text-center lg:text-left;
+  }
+
+  .responsive-flex {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  /* Ensure content doesn't overflow on small screens */
+  .content-safe {
+    @apply max-w-full overflow-hidden;
+  }
+
+  /* Better mobile spacing */
+  .mobile-safe {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Enhanced responsive utilities */
+  .responsive-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16;
+  }
+
+  .responsive-margin {
+    @apply mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16;
+  }
+
+  .responsive-text-size {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+
+  .responsive-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  .responsive-subheading {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .responsive-button {
+    @apply text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4;
+  }
+
+  /* Mobile-first responsive grid */
+  .responsive-grid-1 {
+    @apply grid grid-cols-1 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .responsive-grid-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  /* Responsive flex utilities */
+  .responsive-flex-col {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  .responsive-flex-center {
+    @apply flex flex-col sm:flex-row items-center justify-center;
+  }
+
+  .responsive-flex-between {
+    @apply flex flex-col sm:flex-row items-center justify-between;
+  }
+
+  /* Responsive spacing */
+  .responsive-space-y {
+    @apply space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-12;
+  }
+
+  .responsive-space-x {
+    @apply space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12;
+  }
+
+  /* Responsive width utilities */
+  .responsive-w-full {
+    @apply w-full max-w-full;
+  }
+
+  .responsive-w-container {
+    @apply w-full max-w-7xl mx-auto;
+  }
+
+  .responsive-w-content {
+    @apply w-full max-w-4xl mx-auto;
+  }
+
+  /* Responsive height utilities */
+  .responsive-min-h {
+    @apply min-h-screen sm:min-h-[80vh] md:min-h-[90vh] lg:min-h-screen;
+  }
+
+  /* Responsive visibility */
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden sm:block;
+  }
+
+  .tablet-up {
+    @apply hidden md:block;
+  }
+
+  .mobile-tablet {
+    @apply block lg:hidden;
+  }
+
+  /* Responsive overflow handling */
+  .responsive-overflow {
+    @apply overflow-x-auto overflow-y-visible;
+  }
+
+  .responsive-scroll {
+    @apply overflow-x-hidden overflow-y-auto;
+  }
+
+  /* Touch-friendly interactive elements */
+  .touch-friendly {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Responsive image handling */
+  .responsive-img {
+    @apply w-full h-auto max-w-full object-cover;
+  }
+
+  /* Responsive form elements */
+  .responsive-form {
+    @apply w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto;
+  }
+
+  .responsive-input {
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base;
+  }
+
+  .responsive-textarea {
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base resize-none;
+  }
+
+  /* Responsive card utilities */
+  .responsive-card {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+
+  .responsive-card-sm {
+    @apply p-3 sm:p-4 md:p-6;
+  }
+
+  .responsive-card-lg {
+    @apply p-6 sm:p-8 md:p-10 lg:p-12;
+  }
+}

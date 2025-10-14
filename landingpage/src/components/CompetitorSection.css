@@ -1,0 +1,50 @@
+.competitor-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.competitor-section h2 {
+  color: #3B82F6;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.competitor-section p {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .competitor-section {
+    padding: 60px 0;
+  }
+  
+  .competitor-section h2 {
+    font-size: 2rem;
+  }
+  
+  .competitor-section p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .competitor-section {
+    padding: 50px 0;
+  }
+  
+  .competitor-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .competitor-section p {
+    font-size: 1rem;
+  }
+}
+
+

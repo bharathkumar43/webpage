@@ -1,0 +1,38 @@
+.problem {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%);
+  text-align: center;
+}
+
+.problem h2 {
+  color: #3B82F6;
+  margin-bottom: 1.5rem;
+}
+
+.problem p {
+  font-size: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #6B7280;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .problem {
+    padding: 4rem 0;
+  }
+  
+  .problem p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .problem {
+    padding: 5rem 0;
+  }
+  
+  .problem p {
+    font-size: 1.25rem;
+  }
+}
