@@ -41,8 +41,7 @@ const Header = () => {
               </a>
               <div className="absolute top-full left-0 mt-2 w-56 rounded-lg border border-gray-200 bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
-                  <a href="#industry" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600">Industrial</a>
-                  <a href="http://localhost:3000" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600">Shopping</a>
+                  <a href="/shopping" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600">Shopping</a>
                 </div>
               </div>
             </div>
@@ -102,8 +101,7 @@ const Header = () => {
                   Platform
                 </a>
                 <div className="pl-4 space-y-1">
-                  <a href="#industry" className="block text-gray-600 hover:text-blue-600 py-1.5 text-sm" onClick={() => setIsMenuOpen(false)}>Industrial</a>
-                  <a href="http://localhost:3000" className="block text-gray-600 hover:text-blue-600 py-1.5 text-sm" onClick={() => setIsMenuOpen(false)}>Shopping</a>
+                  <a href="/shopping" className="block text-gray-600 hover:text-blue-600 py-1.5 text-sm" onClick={() => setIsMenuOpen(false)}>Shopping</a>
                 </div>
               </div>
 

@@ -5,14 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ContactUs from "./pages/ContactUs";
-import Documentation from "./pages/Documentation";
 import Blog from "./pages/Blog";
-import CaseStudies from "./pages/CaseStudies";
-import HelpCenter from "./pages/HelpCenter";
-import Community from "./pages/Community";
+import AboutUs from "./pages/AboutUs";
 import DemoPage from "./pages/DemoPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Shopping from "./pages/Shopping";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,12 +24,10 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/shopping" element={<Shopping />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/documentation" element={<Documentation />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/help-center" element={<HelpCenter />} />
-            <Route path="/community" element={<Community />} />
+            <Route path="/about-us" element={<AboutUs />} />
             <Route path="/demo" element={<DemoPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
