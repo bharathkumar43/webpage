@@ -8,7 +8,7 @@ const TrustIndicatorsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8">
-            Trusted by 2,000+ content teams, marketers & agencies worldwide
+            Trusted by 200+ ecommerce brands & agencies worldwide
           </p>
           <div className="flex flex-wrap justify-center gap-16 sm:gap-20 lg:gap-24 items-center">
             <img 

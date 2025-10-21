@@ -18,10 +18,10 @@ const CustomerBanner = () => {
           {/* Content - Centered Single Column */}
           <div className="text-center space-y-6 sm:space-y-8 relative z-10">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Ready to Dominate AI Search?
+              Ready to Dominate AI Shopping?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Don't let your competitors own AI results. Upgrade your content and start ranking in AI engines today.
+              Don't let competitors own the AI shelf. Optimize your products and win.
             </p>
             <Button 
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg sm:text-xl font-semibold py-4 sm:py-5 px-8 sm:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto w-fit"

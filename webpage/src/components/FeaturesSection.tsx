@@ -20,7 +20,7 @@ const FeaturesSection = () => {
     {
       icon: Search,
       title: "AI Visibility Analyzer",
-      benefits: ["Multi-LLM monitoring", "Real-time scoring", "Trend reports"],
+      benefits: ["Multi-LLM monitoring", "Real-time scoring", "Trend tracking"],
       cta: "Analysis",
       color: "blue",
       demo: {
@@ -51,7 +51,7 @@ const FeaturesSection = () => {
     {
       icon: Sparkles,
       title: "AI Content Generator",
-      benefits: ["Instant question/answer generation", "Schema-ready outputs", "Optimized for trust & citations"],
+      benefits: ["Auto-Generate FAQs", "Buyer Q&A", "AI-optimized copy for your products"],
       cta: "Generate Content Now",
       color: "blue",
       demo: {
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
     {
       icon: Zap,
       title: "Optimization Suite",
-      benefits: ["Schema coverage checker", "Freshness scanner", "Internal linking insights"],
+      benefits: ["Product schema checker", "Freshness scanner", "Internal linking insights"],
       cta: "Boost My Score",
       color: "blue",
       demo: {

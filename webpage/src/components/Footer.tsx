@@ -32,9 +32,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-              Supercharge your site. Get noticed. Transform your<br />
-              content with AI-powered optimization and<br />
-              generative engine technology.
+              Supercharge your ecommerce visibility. Get noticed.<br />
+              Win AI search.
             </p>
             {/* Social Media Icons */}
             <TooltipProvider>

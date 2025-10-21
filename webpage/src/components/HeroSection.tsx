@@ -16,13 +16,14 @@ const HeroSection = () => {
           <div className="text-center md:text-left order-2 md:order-1 flex flex-col items-center md:items-start">
             {/* Main Headline */}
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight">
-              <span className="text-black">Supercharge Your </span>
-              <span className="text-blue-600">Content For AI</span>
+              <span className="text-black">Supercharge Your Ecommerce</span>
+              <br />
+              <span className="text-blue-600">Visibility For AI</span>
             </h1>
             
             {/* Description */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-xl sm:max-w-2xl mx-auto sm:mx-0 leading-relaxed">
-              Paste your site's content, generate AI-powered questions and answers, and boost your brand's visibility. Analyze, optimize, and automate—all in one place. No coding, just results.
+            Paste your product URLs, analyze AI-powered visibility, and make your store the top recommendation across AI platforms. Audit, optimize, and scale—no coding required, just sales growth.
             </p>
             
             {/* CTA Buttons */}

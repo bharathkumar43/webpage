@@ -12,7 +12,7 @@ const GrowthFeaturesSection = () => {
       features: [
         "Multi-LLM monitoring",
         "Real-time scoring",
-        "Historical trend reports"
+        "Trend tracking"
       ],
       cta: "Analysis",
       score: "85/100"
@@ -33,7 +33,7 @@ const GrowthFeaturesSection = () => {
       title: "AI Content Generator",
       description: "Automatically create FAQs, snippets, and Q&A blocks designed for GEO.",
       features: [
-        "Instant question/answer generation",
+        "Auto generate Faq's",
         "Schema-ready outputs",
         "Optimized for trust & citations"
       ],
@@ -57,11 +57,11 @@ const GrowthFeaturesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            Features That Power Growth
+            Features That Power Ecommerce Growth
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Everything you need to{" "}
-            <span className="text-primary">dominate AI search results</span>
+            <span className="text-primary">Everything you need to dominate AI shopping results. </span>
           </h2>
         </div>
 

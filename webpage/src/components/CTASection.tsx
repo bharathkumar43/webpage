@@ -22,11 +22,11 @@ const CTASection = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             <span className="block">Ready to Dominate</span>
             <span className="block bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
-              AI Search Results?
+              AI Shopping?
             </span>
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-            Join thousands of content creators who've boosted their AI visibility by 300% in just 30 days
+            Don't let competitors own the AI shelf. Optimize your products and win.
           </p>
           
           {/* Simple Social Proof */}

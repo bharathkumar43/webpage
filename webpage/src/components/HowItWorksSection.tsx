@@ -18,26 +18,26 @@ const HowItWorksSection = () => {
   const steps = [
     {
       step: "1",
-      title: "Enter Your Content",
-      description: "Paste URL, upload file, or drop in text for instant analysis.",
+      title: "Add Your Store",
+      description: "Paste your URL or connect Shopify to start your AI visibility scan.",
       color: "bg-blue-600"
     },
     {
       step: "2", 
-      title: "AI Visibility Scan",
-      description: "Kabini checks performance across all major AI engines.",
+      title: "Run AI Scan",
+      description: "Kabini checks your product visibility across AI platforms.",
       color: "bg-blue-600"
     },
     {
       step: "3",
-      title: "Get Recommendations",
-      description: "AI generates optimized FAQs, snippets, and schema markup.",
+      title: "Get Actionable Insights",
+      description: "Receive optimized GEO recommendations to boost rankings.",
       color: "bg-blue-600"
     },
     {
       step: "4",
-      title: "Track performances",
-      description: "Publish changes and watch your AI visibility grow.",
+      title: "Track Results",
+      description: "Watch your store climb to the top of AI shopping answers.",
       color: "bg-blue-600"
     }
   ];
@@ -56,10 +56,10 @@ const HowItWorksSection = () => {
             Simple Process
           </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
-            How It Works ?
+            Simple Process — How It Works
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
-            Get started in 4 easy steps with our AI-powered platform
+            Add Your Store
           </p>
         </div>
 

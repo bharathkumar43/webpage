@@ -6,24 +6,24 @@ const WhyKabiniSection = () => {
     {
       icon: Zap,
       label: "AI-POWERED",
-      title: "Instant Question Generator",
-      description: "Drop in your content and get custom questions for any audience—fast, smart, and ready to spark engagement.",
+      title: "Product Question Generator",
+      description: "Create smart shopper Q&A blocks that make your products more discoverable in AI results.",
       buttonText: "Generate Questions",
       color: "blue"
     },
     {
       icon: Search,
       label: "VECTOR MATCHING",
-      title: "Semantic Match Checker",
-      description: "See how your content stacks up with AI answers. Get clear insights and fine-tune for maximum impact.",
+      title: "Product Match Checker",
+      description: "See how your product content aligns with AI responses and optimize for better placement.",
       buttonText: "Check Match",
       color: "blue"
     },
     {
       icon: BarChart3,
       label: "AI ANALYSIS",
-      title: "AI Visibility Analysis",
-      description: "Analyze your content's visibility across AI platforms and search engines. Get detailed insights on how AI systems perceive your content.",
+      title: "AI Visibility Reports",
+      description: "Track how your products appear in ChatGPT, Gemini, and more. See what shoppers actually see.",
       buttonText: "Analyze Now",
       color: "blue"
     },
@@ -31,23 +31,23 @@ const WhyKabiniSection = () => {
       icon: Sparkles,
       label: "GEO READY",
       title: "Generative Engine Optimization",
-      description: "Optimize your content for AI search engines and language models. Stay ahead of the SEO evolution.",
+      description: "Make your product pages AI-friendly and boost rankings across shopping assistants.",
       buttonText: "Optimize Content",
       color: "blue"
     },
     {
       icon: Brain,
       label: "ADVANCED AI",
-      title: "Multi-AI Intelligence",
-      description: "Harness the power of multiple AI models simultaneously for diverse perspectives and enhanced accuracy.",
+      title: "Multi-AI Monitoring",
+      description: "Analyze visibility across multiple AI models at once for global coverage.",
       buttonText: "Try Multi-AI",
       color: "blue"
     },
     {
       icon: TrendingUp,
       label: "GROWTH",
-      title: "Brand Visibility Boost",
-      description: "Improve your content's discoverability and relevance across all AI platforms for maximum brand exposure.",
+      title: "Store Visibility Boost",
+      description: " Improve discoverability and drive sales by owning the top AI results in your category.",
       buttonText: "Boost Visibility",
       color: "blue"
     }
@@ -67,7 +67,7 @@ const WhyKabiniSection = () => {
             Why Kabini.ai ?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            The world's first AI Visibility Platform. Stay ahead in the AI-driven search landscape with cutting-edge technology.
+          The world’s first AI Visibility Platform for Ecommerce. Dominate AI-driven shopping and stay ahead of competitors.
           </p>
         </div>
 

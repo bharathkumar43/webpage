@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Zap, Menu, X, ChevronDown } from "lucide-react";
+import { Zap, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -30,21 +30,6 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {/* Platform dropdown */}
-            <div className="relative group">
-              <a
-                href="#platform"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 flex items-center gap-1"
-              >
-                Platform
-                <ChevronDown className="w-4 h-4" />
-              </a>
-              <div className="absolute top-full left-0 mt-2 w-56 rounded-lg border border-gray-200 bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="py-2">
-                  <a href="/shopping" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600">Shopping</a>
-                </div>
-              </div>
-            </div>
 
             {navigationItems.map((item) => (
               <a
@@ -87,23 +72,11 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+          {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
             <div className="px-4 py-4 space-y-4">
-              {/* Platform and nested items for mobile */}
-              <div>
-                <a
-                  href="#platform"
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Platform
-                </a>
-                <div className="pl-4 space-y-1">
-                  <a href="/shopping" className="block text-gray-600 hover:text-blue-600 py-1.5 text-sm" onClick={() => setIsMenuOpen(false)}>Shopping</a>
-                </div>
-              </div>
+              {/* Mobile-only links */}
 
               {navigationItems.map((item) => (
                 <a

@@ -10,7 +10,6 @@ import AboutUs from "./pages/AboutUs";
 import DemoPage from "./pages/DemoPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
-import Shopping from "./pages/Shopping";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,7 +23,6 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/shopping" element={<Shopping />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about-us" element={<AboutUs />} />
