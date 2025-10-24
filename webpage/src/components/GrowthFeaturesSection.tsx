@@ -106,40 +106,50 @@ const GrowthFeaturesSection = () => {
                 {index === 0 && (
                   <Card className="w-full max-w-sm bg-card/80 backdrop-blur-sm border-border/50">
                     <CardHeader className="pb-3">
-                      <div className="flex items-center justify-between">
-                        <h4 className="font-semibold">AI Visibility Score</h4>
-                        <Badge variant="outline" className="text-xs">
-                          {feature.score}
-                        </Badge>
-                      </div>
+                      <h4 className="font-semibold text-lg">AI Visibility</h4>
                     </CardHeader>
-                    <CardContent className="space-y-3">
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between text-sm">
-                          <span>ChatGPT</span>
-                          <span className="text-primary font-semibold">85%</span>
+                    <CardContent>
+                      {/* Y-axis labels */}
+                      <div className="relative h-64 mb-2">
+                        <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-muted-foreground">
+                          <span>100%</span>
+                          <span>60%</span>
+                          <span>40%</span>
+                          <span>20%</span>
                         </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <div className="bg-primary h-2 rounded-full" style={{width: '85%'}}></div>
+                        
+                        {/* Grid lines */}
+                        <div className="absolute left-12 right-0 top-0 h-full flex flex-col justify-between">
+                          <div className="border-t border-muted"></div>
+                          <div className="border-t border-muted"></div>
+                          <div className="border-t border-muted"></div>
+                          <div className="border-t border-muted"></div>
+                          <div className="border-t border-muted"></div>
+                        </div>
+                        
+                        {/* Bar chart */}
+                        <div className="absolute left-12 right-0 bottom-0 h-full flex items-end justify-around gap-2 pb-1">
+                          <div className="flex flex-col items-center flex-1">
+                            <div className="w-full bg-blue-500 rounded-t-lg transition-all duration-500" style={{height: '20%'}}></div>
+                          </div>
+                          <div className="flex flex-col items-center flex-1">
+                            <div className="w-full bg-blue-500 rounded-t-lg transition-all duration-500" style={{height: '28%'}}></div>
+                          </div>
+                          <div className="flex flex-col items-center flex-1">
+                            <div className="w-full bg-blue-500 rounded-t-lg transition-all duration-500" style={{height: '48%'}}></div>
+                          </div>
+                          <div className="flex flex-col items-center flex-1">
+                            <div className="w-full bg-blue-500 rounded-t-lg transition-all duration-500" style={{height: '82%'}}></div>
+                          </div>
                         </div>
                       </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between text-sm">
-                          <span>Gemini</span>
-                          <span className="text-primary font-semibold">78%</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <div className="bg-primary h-2 rounded-full" style={{width: '78%'}}></div>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between text-sm">
-                          <span>Claude</span>
-                          <span className="text-primary font-semibold">92%</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <div className="bg-primary h-2 rounded-full" style={{width: '92%'}}></div>
-                        </div>
+                      
+                      {/* X-axis labels */}
+                      <div className="flex justify-around ml-12 text-xs text-muted-foreground mt-2">
+                        <span>ChatGPT</span>
+                        <span>Gemini</span>
+                        <span>Perplexity</span>
+                        <span>Claude</span>
                       </div>
                     </CardContent>
                   </Card>

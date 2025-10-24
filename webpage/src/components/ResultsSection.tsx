@@ -20,7 +20,7 @@ const ResultsSection = () => {
     {
       icon: Star,
       metric: "4.9/5",
-      label: "Average Rating from ecommerce teams",
+      label: "Average Rating from Shopify teams",
       color: "text-yellow-600",
       bgColor: "bg-yellow-50"
     },
@@ -50,7 +50,7 @@ const ResultsSection = () => {
             Proven Impact for Your Store
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
-            Real metrics from ecommerce brands using Kabini.ai to win AI shopping results
+            Real metrics from Shopify brands using Kabini.ai to win AI shopping results
           </p>
         </div>
 
@@ -82,7 +82,7 @@ const ResultsSection = () => {
         {/* Additional Trust Indicator */}
         <div className="mt-12 sm:mt-16 text-center">
           <p className="text-base sm:text-lg text-gray-600">
-            Join <span className="font-bold text-blue-600">200+ ecommerce brands</span> already winning AI shopping results
+            Join <span className="font-bold text-blue-600">200+ Shopify brands</span> already winning AI shopping results
           </p>
         </div>
       </div>

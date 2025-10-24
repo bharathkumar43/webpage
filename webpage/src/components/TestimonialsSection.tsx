@@ -65,55 +65,12 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <>
-      {/* First CTA Section: Statistics & Trust Indicators */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-block">
-              <Badge className="mb-6 bg-blue-600 hover:bg-blue-600 text-white border-0 shadow-lg text-sm px-4 py-2">
-                Trusted by 2,000+ teams
-              </Badge>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-black">
-                Loved by Ecommerce Teams Worldwide
-              </span>
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              See how leading online stores are transforming their AI visibility and boosting sales.
-            </p>
-          </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12 sm:mb-16">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="text-center transform hover:scale-105 transition-transform duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Second CTA Section: Testimonials */}
-      <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
               Testimonials
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Testimonials
-            </p>
           </div>
 
           {/* Testimonials Grid */}
@@ -169,28 +126,6 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </section>
-
-      {/* Third CTA Section: Main Call to Action */}
-      <section className="text-center py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-gray-100 to-blue-100 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8 whitespace-nowrap">
-            Ready to join thousands of ecommerce brands?
-          </h3>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 lg:mb-10 max-w-4xl mx-auto leading-relaxed">
-            Start your free trial today and see how AI visibility drives growth
-          </p>
-          <div className="flex justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 font-semibold"
-              asChild
-            >
-              <a href="https://app.kabini.ai">Start Free Trial</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </>
   );
 };
 

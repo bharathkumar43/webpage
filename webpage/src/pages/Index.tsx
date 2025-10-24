@@ -2,10 +2,10 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import WhyKabiniSection from "@/components/WhyKabiniSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import CTASection from "@/components/CTASection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import WhoItsForSection from "@/components/WhoItsForSection";
-import ResultsSection from "@/components/ResultsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import WhoItsForSection from "@/components/WhoItsForSection";
 import CustomerBanner from "@/components/CustomerBanner";
 import Footer from "@/components/Footer";
 
@@ -16,10 +16,10 @@ const Index = () => {
       <HeroSection />
       <WhyKabiniSection />
       <FeaturesSection />
+      <CTASection />
       <HowItWorksSection />
-      <WhoItsForSection />
-      <ResultsSection />
       <TestimonialsSection />
+      <WhoItsForSection />
       <CustomerBanner />
       <Footer />
     </div>

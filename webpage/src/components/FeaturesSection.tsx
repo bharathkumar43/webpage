@@ -19,9 +19,9 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: Search,
-      title: "AI Visibility Analyzer",
-      benefits: ["Multi-LLM monitoring", "Real-time scoring", "Trend tracking"],
-      cta: "Analysis",
+      title: "AI Visibility Tracking",
+      benefits: ["Track rankings across multiple AI assistants", "Monitor regional and language visibility", "Receive alerts when your product drops in AI answers"],
+      cta: "Track Visibility",
       color: "blue",
       demo: {
         title: "AI Visibility Score",
@@ -35,8 +35,8 @@ const FeaturesSection = () => {
     },
     {
       icon: BarChart3,
-      title: "Competitor Benchmarking",
-      benefits: ["Side-by-side competitor comparison", "Market share insights", "Gap analysis"],
+      title: "Competitor Intelligence",
+      benefits: ["Compare citation frequency, tone, and placement", "Detect emerging competitors gaining traction", "Identify gaps in category and price positioning"],
       cta: "Analyze Competitors",
       color: "blue",
       demo: {
@@ -50,23 +50,9 @@ const FeaturesSection = () => {
     },
     {
       icon: Sparkles,
-      title: "AI Content Generator",
-      benefits: ["Auto-Generate FAQs", "Buyer Q&A", "AI-optimized copy for your products"],
-      cta: "Generate Content Now",
-      color: "blue",
-      demo: {
-        title: "Generated FAQ",
-        items: [
-          { question: "What is AI visibility optimization?", answer: "AI visibility optimization is the process of ensuring your content appears prominently in AI-powered search results..." },
-          { question: "How does GEO differ from SEO?", answer: "Generative Engine Optimization (GEO) focuses on optimizing for AI engines rather than traditional search..." }
-        ]
-      }
-    },
-    {
-      icon: Zap,
-      title: "Optimization Suite",
-      benefits: ["Product schema checker", "Freshness scanner", "Internal linking insights"],
-      cta: "Boost My Score",
+      title: "GEO Optimization Suite",
+      benefits: ["Check schema coverage", "Scan content freshness", "Get internal linking insights"],
+      cta: "Optimize Now",
       color: "blue",
       demo: {
         title: "Optimization Suite",
@@ -76,8 +62,30 @@ const FeaturesSection = () => {
           { name: "Internal Links", status: "Poor", color: "red" }
         ]
       }
+    },
+    {
+      icon: Zap,
+      title: "Shopper Insights",
+      benefits: ["Query intent mapping (informational, comparative, transactional)", "Top shopper questions in your category", "Sentiment analysis of how your brand is framed"],
+      cta: "Get Insights",
+      color: "blue",
+      demo: {
+        title: "Shopper Insights",
+        items: [
+          { question: "What is AI visibility optimization?", answer: "AI visibility optimization is the process of ensuring your content appears prominently in AI-powered search results..." },
+          { question: "How does GEO differ from SEO?", answer: "Generative Engine Optimization (GEO) focuses on optimizing for AI engines rather than traditional search..." }
+        ]
+      }
     }
   ];
+
+  // Map feature titles to their corresponding public SVGs
+  const demoImageByTitle: Record<string, string> = {
+    "AI Visibility Tracking": "/AI%20Visibility%20Score%20-2.svg",
+    "Competitor Intelligence": "/Competitor%20Benchmarking%20-2.svg",
+    "GEO Optimization Suite": "/Optimization%20Suite%20-2.svg",
+    "Shopper Insights": "/AI%20Content%20Generator%20-2.svg",
+  };
 
   return (
     <section id="features" className="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
@@ -97,11 +105,11 @@ const FeaturesSection = () => {
           <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               <span className="text-gray-900">
-                Features That Power Growth
+                Our Solutions
               </span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
-              Everything you need to dominate AI search results
+              At Kabini.ai, we help Shopify stores brands win visibility in AI-powered search and shopping assistants.
             </p>
           </div>
         </div>
@@ -180,6 +188,14 @@ const FeaturesSection = () => {
                 
                 {/* Benefits & CTA - Mobile */}
                 <div className="text-center space-y-4">
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                    {feature.title === "AI Visibility Tracking" && "See exactly how your brand and products appear in ChatGPT, Gemini, Copilot, Perplexity, and Claude."}
+                    {feature.title === "Competitor Intelligence" && "Benchmark your Share of AI Voice against rivals and uncover their strategy."}
+                    {feature.title === "GEO Optimization Suite" && "Make your product content AI-ready with actionable recommendations."}
+                    {feature.title === "Shopper Insights" && "Understand what real shoppers ask AI assistants."}
+                  </p>
+                  
                   <div className="space-y-3">
                     {feature.benefits.map((benefit, benefitIndex) => (
                       <div key={benefitIndex} className="flex items-center gap-3 justify-center">
@@ -217,6 +233,14 @@ const FeaturesSection = () => {
                       <h3 className="text-3xl font-bold text-gray-900">{feature.title}</h3>
                     </div>
                     
+                    {/* Description */}
+                    <p className="text-base text-gray-600 leading-relaxed mb-6">
+                      {feature.title === "AI Visibility Tracking" && "See exactly how your brand and products appear in ChatGPT, Gemini, Copilot, Perplexity, and Claude."}
+                      {feature.title === "Competitor Intelligence" && "Benchmark your Share of AI Voice against rivals and uncover their strategy."}
+                      {feature.title === "GEO Optimization Suite" && "Make your product content AI-ready with actionable recommendations."}
+                      {feature.title === "Shopper Insights" && "Understand what real shoppers ask AI assistants."}
+                    </p>
+                    
                     {/* Benefits */}
                     <div className="space-y-3">
                       {feature.benefits.map((benefit, benefitIndex) => (
@@ -245,56 +269,14 @@ const FeaturesSection = () => {
                   </div>
                 </div>
                 
-                {/* Demo Card Column - Fixed right side for odd indexes, left side for even indexes */}
-                <div className={`${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
-                  <div className="transform hover:scale-105 transition-all duration-500">
-                    <Card className="bg-white shadow-lg border border-gray-200 rounded-xl overflow-hidden max-w-sm w-full">
-                      <CardContent className="p-4">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">{feature.demo.title}</h4>
-                        
-                        {/* Demo Content */}
-                        <div className="space-y-3">
-                          {feature.demo.score && (
-                            <div className="text-center mb-3">
-                              <div className="text-2xl font-bold text-blue-600">{feature.demo.score}</div>
-                            </div>
-                          )}
-                          
-                          {feature.demo.items.map((item, itemIndex) => (
-                            <div key={itemIndex} className="space-y-2">
-                              {item.score && (
-                                <>
-                                <div className="flex items-center justify-between">
-                                  <span className="text-sm font-medium text-gray-700">{item.name}</span>
-                                    <span className="text-sm font-bold text-gray-500">{item.score}%</span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                  <div 
-                                      className="h-2.5 rounded-full transition-all duration-1000 bg-gray-400" 
-                                    style={{width: `${item.score}%`}}
-                                  ></div>
-                                </div>
-                                </>
-                              )}
-                              
-                              {item.status && (
-                                <div className="flex items-center justify-between">
-                                  <span className="text-sm font-medium text-gray-700">{item.name}</span>
-                                  <span className="text-sm font-bold text-gray-500">{item.status}</span>
-                                </div>
-                              )}
-                              
-                              {item.question && (
-                                <div className="space-y-2">
-                                  <div className="text-sm font-medium text-gray-700">Q: {item.question}</div>
-                                  <div className="text-sm text-gray-600">A: {item.answer}</div>
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
+                {/* Demo Column - image only, no card */}
+                <div className={`${index % 2 === 0 ? 'order-2' : 'order-1'} flex items-center justify-center`}>
+                  <div className="rounded-xl border border-blue-200/50 hover:border-blue-400/60 bg-white p-2 sm:p-3 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300">
+                    <img
+                      src={demoImageByTitle[feature.title] || '/placeholder.svg'}
+                      alt={feature.title}
+                      className="block w-[240px] sm:w-[280px] md:w-[340px] lg:w-[400px] h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>

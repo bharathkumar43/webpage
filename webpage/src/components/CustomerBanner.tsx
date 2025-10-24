@@ -29,7 +29,7 @@ const CustomerBanner = () => {
             >
               <Link to="/contact">
                 <Phone className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                Book Free Demo
+                Start Free Trial
               </Link>
             </Button>
           </div>

@@ -6,55 +6,55 @@ const WhyKabiniSection = () => {
     {
       icon: Zap,
       label: "AI-POWERED",
-      title: "Product Question Generator",
-      description: "Create smart shopper Q&A blocks that make your products more discoverable in AI results.",
+      title: "Question Generator",
+      description: "Create smart FAQs and Q&A blocks for your Shopify product pages. Help AI models better understand your products and increase your chances of appearing in AI answers.",
       buttonText: "Generate Questions",
       color: "blue"
     },
     {
-      icon: Search,
-      label: "VECTOR MATCHING",
-      title: "Product Match Checker",
-      description: "See how your product content aligns with AI responses and optimize for better placement.",
-      buttonText: "Check Match",
-      color: "blue"
-    },
-    {
       icon: BarChart3,
-      label: "AI ANALYSIS",
-      title: "AI Visibility Reports",
-      description: "Track how your products appear in ChatGPT, Gemini, and more. See what shoppers actually see.",
+      label: "VISIBILITY ANALYSIS",
+      title: "AI Performance Reports",
+      description: "Monitor how your Shopify products rank across ChatGPT, Gemini, Perplexity, and Claude. Understand how AI presents your products to shoppers.",
       buttonText: "Analyze Now",
       color: "blue"
     },
     {
+      icon: Search,
+      label: "COMPETITOR INSIGHTS",
+      title: "Market Benchmarking",
+      description: "Track competitor product visibility and discover where your store stands. Identify opportunities to outperform them in AI rankings.",
+      buttonText: "Check Match",
+      color: "blue"
+    },
+    {
       icon: Sparkles,
-      label: "GEO READY",
-      title: "Generative Engine Optimization",
-      description: "Make your product pages AI-friendly and boost rankings across shopping assistants.",
+      label: "PROMPT ANALYSIS",
+      title: "Shopper Intent Insights",
+      description: "Understand how real shoppers search through AI prompts. Uncover visibility gaps, optimize your product pages, and win top positions in AI recommendations.",
       buttonText: "Optimize Content",
       color: "blue"
     },
     {
       icon: Brain,
       label: "ADVANCED AI",
-      title: "Multi-AI Monitoring",
-      description: "Analyze visibility across multiple AI models at once for global coverage.",
+      title: "Multi-Engine Monitoring",
+      description: "Track your store's visibility across multiple AI models from one dashboard. Get performance trends and improvement insights in real time.",
       buttonText: "Try Multi-AI",
       color: "blue"
     },
     {
       icon: TrendingUp,
       label: "GROWTH",
-      title: "Store Visibility Boost",
-      description: " Improve discoverability and drive sales by owning the top AI results in your category.",
+      title: "AI Product Visibility Tracking",
+      description: "Boost your product visibility across top AI platforms. Secure prime placement, attract high-intent shoppers, and turn rankings into sales.",
       buttonText: "Boost Visibility",
       color: "blue"
     }
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
+    <section id="why-kabini" className="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-4 sm:left-10 w-16 h-16 sm:w-32 sm:h-32 bg-gray-400/10 rounded-full blur-2xl sm:blur-3xl animate-float-slow"></div>
@@ -64,10 +64,10 @@ const WhyKabiniSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
-            Why Kabini.ai ?
+            Why Kabini.ai?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          The world’s first AI Visibility Platform for Ecommerce. Dominate AI-driven shopping and stay ahead of competitors.
+            Track your store's presence across top AI platforms, analyze how your products perform, and uncover opportunities to grow sales with data-driven visibility insights.
           </p>
         </div>
 

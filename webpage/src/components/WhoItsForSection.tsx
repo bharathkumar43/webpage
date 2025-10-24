@@ -7,25 +7,25 @@ const WhoItsForSection = () => {
     {
       icon: ShoppingBag,
       title: "Shopify Sellers",
-      description: "Automate GEO for your product pages and scale visibility across AI assistants.",
+      description: "Optimize product pages and boost AI visibility to drive more sales.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Store,
-      title: "Marketplace Brands",
-      description: "Compete with retail giants and win AI shelf space for your top SKUs.",
+      title: "Shopify Brands",
+      description: "Compete with larger retailers and win AI shelf space for your top products.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: TrendingUp,
       title: "Marketing & SEO Teams",
-      description: "Get real shopper queries, optimize faster, and own your category.",
+      description: "Access real shopper prompts, optimize faster, and grow store visibility.",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Building2,
-      title: "Enterprise Retailers",
-      description: "Unlock competitive intelligence and real-time placement alerts.",
+      title: "Enterprise Shopify Stores",
+      description: "Unlock competitive intelligence, visibility trends, and real-time alerts.",
       color: "from-blue-500 to-blue-600"
     }
   ];
@@ -44,7 +44,7 @@ const WhoItsForSection = () => {
             Who It's For?
           </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
-            Built for Every Ecommerce Team
+            Built for Every Shopify Team
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
             Whether you're a solo seller or an enterprise brand, Kabini.ai helps you dominate AI shopping

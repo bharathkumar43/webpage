@@ -58,9 +58,6 @@ const HowItWorksSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
             Simple Process — How It Works
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl sm:max-w-3xl mx-auto">
-            Add Your Store
-          </p>
         </div>
 
         {/* Steps Grid */}

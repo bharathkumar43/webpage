@@ -447,8 +447,8 @@ const TermsOfService = () => {
                         <FileText className="w-5 h-5 text-blue-600" />
                         <div>
                           <p className="font-semibold text-gray-900">Email:</p>
-                          <a href="mailto:kabini.ai.marketing@gmail.com" className="text-blue-600 hover:underline">
-                            kabini.ai.marketing@gmail.com
+                          <a href="mailto:Contact@kabini.ai" className="text-blue-600 hover:underline">
+                            Contact@kabini.ai
                           </a>
                         </div>
                       </div>

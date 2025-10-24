@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, MapPin, Clock, Send, Zap, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Send, Zap, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { submitToHubSpot } from "@/utils/hubspot";
 import { trackContactFormSubmit } from "@/config/analytics";
@@ -33,6 +33,15 @@ const ContactUs = () => {
     }));
   };
 
+  // Helper: save a local JSON file with the submission
+  const saveLocalFile = (payload: any) => {
+    try {
+      const existing = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
+      existing.push(payload);
+      localStorage.setItem('contact_submissions', JSON.stringify(existing, null, 2));
+    } catch {}
+  };
+
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,26 +49,29 @@ const ContactUs = () => {
     setSubmitStatus({ type: null, message: '' });
 
     try {
+      // 1) Submit to HubSpot (existing)
       const result = await submitToHubSpot(formData);
-      
+
+      // 2) POST to local API to store in a database (expects /api/contact server route)
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...formData, submittedAt: new Date().toISOString() })
+        });
+      } catch {}
+
+      // 3) Save to local file substitute (localStorage log)
+      saveLocalFile({ ...formData, submittedAt: new Date().toISOString() });
+
       if (result.success) {
-        setSubmitStatus({ type: 'success', message: result.message });
-        
-        // Track form submission in Google Analytics
+        setSubmitStatus({ type: 'success', message: result.message || 'Thanks! Your message has been sent.' });
         trackContactFormSubmit({
           firstName: formData.firstName,
           email: formData.email,
           source: 'contact_us_page'
         });
-        
-        // Reset form after successful submission
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          website: '',
-          message: ''
-        });
+        setFormData({ firstName: '', lastName: '', email: '', website: '', message: '' });
       } else {
         setSubmitStatus({ type: 'error', message: result.message });
       }
@@ -244,28 +256,15 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">kabini.ai.marketing@gmail.com</p>
+                    <a href="mailto:Contact@kabini.ai" className="text-blue-600 hover:underline">
+                      Contact@kabini.ai
+                    </a>
                     <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                   </div>
                 </div>
-                
-                
-                <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Visit Us</h3>
-                    <p className="text-gray-600">Kondapur Jyothi Granules</p>
-                    <p className="text-sm text-gray-500">By appointment only</p>
-                  </div>
-                </div>
+                {/* Only Email Us block is shown */}
               </CardContent>
             </Card>
-
-            
-
-            
           </div>
         </div>
       </div>

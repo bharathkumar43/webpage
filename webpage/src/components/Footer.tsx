@@ -32,7 +32,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-              Supercharge your ecommerce visibility. Get noticed.<br />
+              Supercharge your Shopify visibility. Get noticed.<br />
               Win AI search.
             </p>
             {/* Social Media Icons */}
@@ -104,10 +104,10 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <button 
-                  onClick={() => scrollToSection('solutions')}
+                  onClick={() => scrollToSection('features')}
                   className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
                 >
-                  Solutions
+                  Our Solutions
                 </button>
               </li>
               <li>
@@ -120,20 +120,13 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('why-choose')}
+                  onClick={() => scrollToSection('why-kabini')}
                   className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
                 >
-                  Why Choose Us
+                  Why Kabini
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('faq')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
-                >
-                  FAQ
-                </button>
-              </li>
+              {/* FAQ removed */}
             </ul>
           </div>
 
