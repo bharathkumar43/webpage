@@ -1,22 +1,51 @@
 import { Button } from "@/components/ui/button";
 import { Zap, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navigationItems = [
-    { name: "Features", href: "#features" },
+    { name: "Solutions", href: "#features" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "Testimonials", href: "#testimonials" }
   ];
+
+  const handleNavigation = (href: string) => {
+    // Close mobile menu
+    setIsMenuOpen(false);
+    
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If we're already on homepage, just scroll to section
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <button 
+            onClick={() => navigate('/')}
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+          >
             <div className="relative group">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-md">
                 <Zap className="w-6 h-6 text-white" />
@@ -26,19 +55,19 @@ const Header = () => {
             <span className="text-2xl font-bold text-blue-600">
               Kabini.ai
             </span>
-          </div>
+          </button>
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
 
             {navigationItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavigation(item.href)}
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -79,14 +108,13 @@ const Header = () => {
               {/* Mobile-only links */}
 
               {navigationItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavigation(item.href)}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors duration-300 text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <a 

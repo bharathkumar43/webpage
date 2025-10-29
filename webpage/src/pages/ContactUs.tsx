@@ -3,10 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Send, Zap, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { submitToHubSpot } from "@/utils/hubspot";
 import { trackContactFormSubmit } from "@/config/analytics";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ContactUs = () => {
   // Form state management
@@ -86,45 +88,28 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      {/* Header Section */}
-      <div className="bg-gray-50 border-b border-gray-200/50">
-        <div className="container mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 py-4 xs:py-5 sm:py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="relative group">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-md">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute inset-0 rounded-2xl bg-blue-500/30 blur-lg -z-10 transition-all duration-300 group-hover:blur-xl"></div>
-              </div>
-              <span className="text-2xl font-bold text-blue-600">
-                Kabini.ai
-              </span>
-            </div>
-            <Badge className="bg-blue-600 text-white px-2 xs:px-3 py-1 rounded-full text-xs xs:text-sm">
-              Contact Us
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+
+      {/* Hero Section */}
+      <div className="pt-16 bg-gradient-to-r from-blue-500 to-blue-600">
+        <div className="container mx-auto px-4 py-14">
+          <div className="text-center">
+            <Badge className="mb-3 bg-white text-blue-600 border-0 shadow-lg text-sm px-4 py-2">
+              Get in Touch
             </Badge>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Contact Us
+            </h1>
+            <p className="text-blue-100 max-w-2xl mx-auto">
+              Have questions about AI visibility optimization? We're here to help you supercharge your content.
+            </p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20">
-        {/* Page Header */}
-        <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
-          <Badge className="mb-3 xs:mb-4 bg-blue-600 text-white border-0 shadow-lg text-xs xs:text-sm px-3 xs:px-4 py-1.5 xs:py-2">
-            Get in Touch
-          </Badge>
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 xs:mb-5 sm:mb-6">
-            <span className="text-gray-900">Contact</span>
-            <span className="text-blue-600"> Us</span>
-          </h1>
-          <p className="text-base xs:text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-            Have questions about AI visibility optimization? We're here to help you supercharge your content.
-          </p>
-        </div>
-
+      <div className="container mx-auto px-4 py-10">
         <div className="grid lg:grid-cols-2 gap-6 xs:gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="order-2 lg:order-1">
@@ -268,6 +253,8 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

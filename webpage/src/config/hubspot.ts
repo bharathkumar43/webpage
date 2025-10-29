@@ -2,12 +2,12 @@
 // Update these values with your actual HubSpot credentials
 
 export const HUBSPOT_CONFIG = {
-  // Your HubSpot Portal ID (from the URL: https://app-na2.hubspot.com/forms/243838456)
-  PORTAL_ID: '243838456',
+  // Your HubSpot Portal ID (from the URL: https://app-na2.hubspot.com/forms/244225778)
+  PORTAL_ID: '244225778', // Your actual Portal ID
   
-  // Form GUID - Extracted from your HubSpot form URL
-  // URL: https://416ayg.share-na2.hsforms.com/2ILw2P882TM69tmdpctjWSQ
-  FORM_GUID: '2ILw2P882TM69tmdpctjWSQ',
+  // Form GUID - Extracted from your HubSpot form embed code
+  // Get this from HubSpot → Marketing → Forms → Your Form → Actions → Embed
+  FORM_GUID: 'd8ed421e-b73b-43e3-90b9-bf1eb26b554b', // Your actual Form GUID
   
   // Optional: HubSpot API Key (for Contacts API method)
   // Get this from HubSpot Settings → Integrations → Private Apps

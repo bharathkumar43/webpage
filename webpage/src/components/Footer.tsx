@@ -5,12 +5,29 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (href: string) => {
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If we're already on homepage, just scroll to section
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -20,7 +37,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Information */}
           <div className="md:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+            <button 
+              onClick={() => navigate('/')}
+              className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity"
+            >
               <div className="relative group">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-md">
                   <Zap className="w-6 h-6 text-white" />
@@ -30,7 +50,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-blue-600">
                 Kabini.ai
               </span>
-            </div>
+            </button>
             <p className="text-gray-600 mb-6 text-sm leading-relaxed">
               Supercharge your Shopify visibility. Get noticed.<br />
               Win AI search.
@@ -80,17 +100,17 @@ const Footer = () => {
                   </TooltipContent>
                 </Tooltip>
                 
-                {/* Pinterest */}
+                {/* YouTube */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a href="https://in.pinterest.com/kabiniai/" className="text-gray-500 hover:text-blue-600 transition-colors flex items-center justify-center w-6 h-6">
+                    <a href="https://www.youtube.com/@KabiniAI" className="text-gray-500 hover:text-blue-600 transition-colors flex items-center justify-center w-6 h-6">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                       </svg>
                     </a>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Pinterest</p>
+                    <p>YouTube</p>
                   </TooltipContent>
                 </Tooltip>
                 
@@ -104,7 +124,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <button 
-                  onClick={() => scrollToSection('features')}
+                  onClick={() => handleNavigation('#features')}
                   className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   Our Solutions
@@ -112,7 +132,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('how-it-works')}
+                  onClick={() => handleNavigation('#how-it-works')}
                   className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   How It Works
@@ -120,7 +140,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('why-kabini')}
+                  onClick={() => handleNavigation('#why-kabini')}
                   className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   Why Kabini
@@ -137,11 +157,6 @@ const Footer = () => {
               <li>
                 <a href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Blog
-                </a>
-              </li>
-              <li>
-                <a href="/about-us" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  About Us
                 </a>
               </li>
               <li>
